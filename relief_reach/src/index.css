@@ -1,5 +1,7 @@
 body {
+  box-sizing: border-box;
   margin: 0;
+  background-color: #DAFFFB;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,3 +13,66 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.container {
+  margin: 1 rem;
+  text-align: center;
+}
+
+.nav {
+  background-color: #176B87;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  text-align: center;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  align-items: centre;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: .5rem;
+}
+
+.site-title {
+  font-size: 2rem;
+}
+
+/* .nav li.active {
+  background-color: #04364A;
+} */
+
+.nav li.active a {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+
+.nav li {
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.nav li:hover {
+  background-color: #04364A;
+  transform: scale(1.05);
+}
+
+.nav li:hover a {
+  /* font-weight: bold; */
+  text-decoration: underline;
+}
+
