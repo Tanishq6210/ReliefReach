@@ -4,28 +4,21 @@ import Home from "./pages/Home"
 import About from "./pages/About"
 import Dashboard from "./pages/Dashboard"
 import Donate from "./pages/Donate"
+import Admin from "./pages/Admin"
+import {Route, Routes} from "react-router-dom"
 
 function App() {
-  let component
-  switch (window.location.pathname) {
-    case "/":
-      component = <Home />
-      break
-    case "/dashboard":
-      component = <Dashboard />
-      break;
-    case "/about":
-      component = <About />
-      break
-    case "/donate":
-      component = <Donate />
-    break
-  }
   return (
     <>
         <Navbar />
         <div className="container">
-          {component}
+          <Routes>
+            <Route path="/" element = {<Home/>} />
+            <Route path="/donate" element = {<Donate/>} />
+            <Route path="/dashboard" element = {<Dashboard/>} />
+            <Route path="/about" element = {<About/>} />
+            <Route path="/admin" element = {<Admin/>} />
+          </Routes>
         </div>
     </>
   );
