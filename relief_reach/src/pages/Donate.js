@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Database } from "@tableland/sdk";
 import { ethers } from "ethers"
+import './About.css'
+
 
 const tableName = "startups_11155111_74"; 
 
@@ -210,40 +212,44 @@ export default function Donate(){
 
     console.log('value is:', event.target.value);
     };
+
     return (
       <div className="about">
       <br></br>
       <center>
-        <p style={myStyle}>"Make a difference in someone's life by donating to NGOs. Your support can provide food, education, and medical aid to those in need.<br></br> Join us in creating a better world, one donation at a time."</p>
+        <p style={myStyle}>"Make a meaningful impact by contributing to our disaster relief funds. Your support can provide crucial aid such as food, shelter, and medical assistance to those affected by disasters. Join us in our mission to rebuild lives and communities in times of crisis, one donation at a time."</p>
         <br></br>
       <div style={myStyle2}>
       <p style={myStyle}>Enter amount you wish to donate:</p> 
-      
-      <input type="text" style={myStyleBox} onChange={handleChange} value={amt} placeholder="Enter your amount in ETH" autoComplete="off"></input>
+      <br></br>
+      <input type="text" style={myStyleBox} onChange={handleChange} value={amt} autoComplete="off"></input>
 
         <div>
+        <div className="box">
         <select value={selectedValue} onChange={handleDropdownChange}>
           <option value="">Select an option</option>
           <option value="scroll">Scroll Sepolia Testnet</option>
           <option value="mantle">Mantle Testnet</option>
-          
         </select>
-        <button onClick={handleButtonClick}>Get Selected Value</button>
+        </div>
       </div>
       </div>
       </center>
+      
       <center>
       <div className="flex-container">
-      {results.map((obj, index) => (
+      {
+          results.map((obj, index) => (
           <div className="card" key={index}>
-          <p id="title_para">{obj.id}</p>
+          <h3><b>Relief Request number:</b> {obj.id}</h3><br></br>
+          <p><b>Phone:</b> {obj.phone}</p>
           <p><b>Description:</b> {obj.description}</p>
-          <p><b>ID:</b> {obj.id}</p>
-          <p><b>Phone:</b> {obj.phone}</p> <br></br>
-          <p><b>NGO Wallet Address:</b> {obj.address}</p>
+          <p><b>PKP: </b> {obj.address}</p>
           <center><button onClick={() => donateNGO(obj.address)}>Donate Now</button> </center>
           </div>
       ))}
+
+
       </div>
       </center>
   </div>

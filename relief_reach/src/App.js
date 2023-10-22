@@ -6,6 +6,10 @@ import Dashboard from "./pages/Dashboard"
 import Donate from "./pages/Donate"
 import Admin from "./pages/Admin"
 import {Route, Routes} from "react-router-dom"
+import { ReactNode } from "react";
+import { StytchProvider } from '@stytch/react';
+import { StytchHeadlessClient } from '@stytch/vanilla-js/headless';
+
 
 function App() {
   return (
