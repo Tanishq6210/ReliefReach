@@ -61,7 +61,7 @@ function Form() {
   const mintPkpWithRelayer = async (credentialResponse) => {
     console.log("Minting PKP with relayer...");
 
-    const mintRes = await fetch(`aab4328cf79540ada27d3fbe55d3c14777da9a4d_conf/auth/google`, {
+    const mintRes = await fetch(`7ada413c-a3ab-4ec8-a183-e5c21ab0f284_ReliefReach/auth/google`, {
       method: "POST",
       headers: {
         'Content-Type': 'application/json'
@@ -89,7 +89,7 @@ function Form() {
     const maxPollCount = 20;
     for (let i = 0; i < maxPollCount; i++) {
       console.log(`Waiting for auth completion (poll #${i+1})`);
-      const getAuthStatusRes = await fetch(`aab4328cf79540ada27d3fbe55d3c14777da9a4d_conf/auth/status/${requestId}`);
+      const getAuthStatusRes = await fetch(`7ada413c-a3ab-4ec8-a183-e5c21ab0f284_ReliefReach/auth/status/${requestId}`);
 
       if (getAuthStatusRes.status < 200 || getAuthStatusRes.status >= 400) {
         console.log("Uh oh, something's not quite right.");
