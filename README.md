@@ -3,7 +3,7 @@
 ### Our Team
 Member | Role
 ------------- | -------------
-Tanishq Tyagi | Team Lead (Full Stack Developer)
+Tanishq Tyagi | Full Stack Developer
 
 ## Project
 
